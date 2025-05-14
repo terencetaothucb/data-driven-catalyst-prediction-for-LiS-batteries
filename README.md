@@ -1,66 +1,106 @@
-# data-driven-catalyst-prediction-for-LiS-batteries
-Data-driven insight into the universal structure-property relationship of catalysts in lithium-sulfur batteries.
+# 📘 Universal Structure–Property Modeling of Catalysts in Lithium–Sulfur Batteries
 
-# Catalyst–LiPS Adsorption Energy Prediction
+This repository contains the datasets, machine learning code, and visualization tools used in the study:
 
-This repository provides the full implementation of the machine learning framework used in our study to predict adsorption energies between metal-based catalysts and lithium polysulfides (LiPS). The model is based on a multi-expert bootstrap-ensemble of Random Forest regressors and is built entirely in MATLAB.
+**"Data-driven insight into the universal structure-property relationship of catalysts in lithium-sulfur batteries"**
 
-The code enables end-to-end reproduction of the training, validation, prediction, and visualization procedures described in the manuscript.
-
----
-
-## 🚀 Overview
-
-- **Purpose**: To predict catalyst–LiPS adsorption energies using literature-derived descriptors and a collaborative ensemble machine learning model.
-- **Key Components**:
-  - Data preprocessing and splitting
-  - Random Forest model training and hyperparameter selection
-  - Validation and performance evaluation
-  - Visualization of predicted vs. actual values
+Published in *Journal of the American Chemical Society* (2025).  
+Corresponding authors: [Guangmin Zhou](mailto:guangminzhou@sz.tsinghua.edu.cn), [Xuan Zhang](mailto:zhangxuan@sz.tsinghua.edu.cn)
 
 ---
 
-## 📁 File Summary
+## 🧭 Motivation
 
-| File | Description |
-|------|-------------|
-| `SplitData.m` | Splits raw dataset into training and validation sets |
-| `SelectModels.m` | Performs grid search to optimize Random Forest hyperparameters |
-| `RF.m` | Trains the Random Forest models (bootstrap ensemble) |
-| `PredictValidation.m` | Applies the trained model to the validation set |
-| `calculate_r2.m` | Computes evaluation metrics (R², RMSE, etc.) |
-| `VisualPrediction.m` | Generates visualizations for predicted vs. true energies |
-| `ValidPred.xlsx` | Sample output of prediction results |
+The sulfur reduction reaction (SRR) is a critical step in lithium–sulfur batteries, yet its catalytic mechanisms remain poorly understood. Existing DFT methods are limited by cost and specificity. To address this, we develop a data-driven framework that extracts universal structure–property relationships (UQSPRs) from over 2,900 published studies and enables rapid prediction and discovery of effective catalysts using machine learning.
 
 ---
 
-## ⚙️ Requirements
+## 🚀 Key Contributions
 
-- MATLAB R2018a or newer
-- Statistics and Machine Learning Toolbox
-- (Optional) Excel I/O support for `.xlsx` data handling
+- Built the first high-quality adsorption energy dataset for SRR catalysts based on literature mining.
+- Proposed a geometric descriptor (dispersion factor) that predicts catalytic activity better than traditional electronic descriptors.
+- Trained a collaborative machine learning model using random forests and feature screening.
+- Screened 374,833 materials and experimentally validated CrB₂ as a high-performance catalyst.
 
 ---
 
-## ▶️ How to Use
+## 🔧 Code Structure and Usage Guide
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/your-username/adsorption-energy-prediction.git
-   cd adsorption-energy-prediction
+This repository provides the complete codebase and data files to reproduce the machine learning framework for predicting the catalytic activity of Li–S battery catalysts.
 
-% Step 1: Data preparation
-SplitData;
+### 📁 Code Structure Overview
+├── dataset.xlsx                      # Final dataset with 14 features and adsorption energy
+├── candidates_from_expert.xlsx      # Expert-selected feature candidates
+├── Training_Testing_Data.xlsx       # Pre-defined train/test split for model training
+│
+├── Main.m                           # Main script to run model training and prediction
+├── Candidate_Features.m             # Feature construction from raw materials data
+├── Rules_candidates.m               # Apply selection rules to reduce feature space
+├── SplitData.m                      # Data splitting into training and validation sets
+├── RF.m                             # Random Forest training with bootstrap strategy
+├── SelectModels.m                   # Aggregates top expert models for final prediction
+├── PredictValidation.m              # Predicts on validation data using trained ensemble
+├── calculate_r2.m                   # R² score calculation
+├── VisualPrediction.m               # MATLAB-based result visualization
+│
+├── Python scripts (optional)       # For plotting and result analysis
+│   ├── Feature_Correlation_Heatmap.py
+│   ├── Ead_Distributions.py
+│   ├── Prediction_Errors.py
+│   └── Prediction_Results.py
+---
 
-% Step 2: Hyperparameter tuning
-SelectModels;
+### ▶️ How to Use
 
-% Step 3: Train the ensemble
-RF;
+1. **Prepare Data**  
+   Ensure `dataset.xlsx` is formatted with 14 descriptors and adsorption energy as target. You may use your own dataset following the same format.
 
-% Step 4: Predict and evaluate
-PredictValidation;
-calculate_r2;
+2. **Run the Main Pipeline**  
+   Launch `Main.m` in MATLAB. This script:
+   - Loads the dataset
+   - Splits it using `SplitData.m`
+   - Trains multiple random forest models via `RF.m`
+   - Aggregates top models in `SelectModels.m`
+   - Predicts adsorption energy using `PredictValidation.m`
 
-% Step 5: Visualize results
-VisualPrediction;
+3. **Evaluate Model Performance**  
+   Use `calculate_r2.m` to compute accuracy metrics. Visualization is supported via:
+   - `VisualPrediction.m` (MATLAB)
+   - or Python scripts for advanced plotting (`Prediction_Results.py`, etc.)
+
+4. **Screen New Materials**  
+   Replace input dataset with new candidate features and repeat the above steps. Predictions will guide high-throughput catalyst selection.
+
+---
+
+## 📊 Visualization and Analysis
+
+Python scripts provide additional tools for performance analysis:
+- `Feature_Correlation_Heatmap.py`: Correlation between structural and electronic features.
+- `Prediction_Errors.py`: Parity and error plots.
+- `Prediction_Results.py`: Visualizes top-performing catalyst predictions.
+- `Ead_Distributions.py`: Adsorption energy distributions across LiPS species.
+
+---
+
+## 📌 Requirements
+
+### MATLAB
+- Version: R2023a or later
+- Toolboxes: Statistics and Machine Learning Toolbox
+
+### Python (Optional)
+- Python ≥ 3.8
+- Required packages: `pandas`, `matplotlib`, `seaborn`, `scikit-learn`, `numpy`
+
+Install via pip:
+```bash
+pip install pandas matplotlib seaborn scikit-learn numpy
+
+@article{Han2025UQSPR,
+  title     = {Data-driven insight into the universal structure–property relationship of catalysts in lithium–sulfur batteries},
+  author    = {Han, Zhiyuan and Tao, Shengyu and Jia, Yeyang and Zhang, Mengtian and Ma, Ruifei and Xiao, Xiao and Zhou, Jiaqi and Gao, Runhua and Cui, Kai and Wang, Tianshuai and Zhang, Xuan and Zhou, Guangmin},
+  journal   = {Journal of the American Chemical Society},
+  year      = {2025},
+  note      = {Accepted, in press}
+}
