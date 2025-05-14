@@ -11,7 +11,9 @@ Corresponding authors: [Guangmin Zhou](mailto:guangminzhou@sz.tsinghua.edu.cn), 
 
 ## 🧭 Motivation
 
-The sulfur reduction reaction (SRR) is a critical step in lithium–sulfur batteries, yet its catalytic mechanisms remain poorly understood. Existing DFT methods are limited by cost and specificity. To address this, we develop a data-driven framework that extracts universal structure–property relationships (UQSPRs) from over 2,900 published studies and enables rapid prediction and discovery of effective catalysts using machine learning.
+The sulfur reduction reaction (SRR) is a critical step in lithium–sulfur batteries, yet its catalytic mechanisms remain poorly understood. Existing DFT methods are limited by cost and specificity. To address this, we develop a data-driven framework that extracts universal structure–property relationships (UQSPRs) from a large-scale, heterogeneous dataset and enables rapid prediction and discovery of effective catalysts using machine learning.
+
+**Our dataset spans 20 years (2004–2024)** and is constructed from over **2,900 peer-reviewed studies**. It contains **481 data points**, covering diverse transition metal compounds and their interactions with five representative polysulfide species. This diversity enables robust and generalizable model learning.
 
 ---
 
@@ -29,6 +31,8 @@ The sulfur reduction reaction (SRR) is a critical step in lithium–sulfur batte
 This repository provides the complete codebase and data files to reproduce the machine learning framework for predicting the catalytic activity of Li–S battery catalysts.
 
 ### 📁 Code Structure Overview
+
+```text
 ├── dataset.xlsx                      # Final dataset with 14 features and adsorption energy
 ├── candidates_from_expert.xlsx      # Expert-selected feature candidates
 ├── Training_Testing_Data.xlsx       # Pre-defined train/test split for model training
@@ -43,11 +47,13 @@ This repository provides the complete codebase and data files to reproduce the m
 ├── calculate_r2.m                   # R² score calculation
 ├── VisualPrediction.m               # MATLAB-based result visualization
 │
-├── Python scripts (optional)       # For plotting and result analysis
+├── Python scripts (optional)        # For plotting and result analysis
 │   ├── Feature_Correlation_Heatmap.py
 │   ├── Ead_Distributions.py
 │   ├── Prediction_Errors.py
 │   └── Prediction_Results.py
+```
+
 ---
 
 ### ▶️ How to Use
@@ -69,13 +75,14 @@ This repository provides the complete codebase and data files to reproduce the m
    - or Python scripts for advanced plotting (`Prediction_Results.py`, etc.)
 
 4. **Screen New Materials**  
-   Replace input dataset with new candidate features and repeat the above steps. Predictions will guide high-throughput catalyst selection.
+   Replace the input dataset with new candidate features and repeat the above steps. Predictions will guide high-throughput catalyst selection.
 
 ---
 
 ## 📊 Visualization and Analysis
 
 Python scripts provide additional tools for performance analysis:
+
 - `Feature_Correlation_Heatmap.py`: Correlation between structural and electronic features.
 - `Prediction_Errors.py`: Parity and error plots.
 - `Prediction_Results.py`: Visualizes top-performing catalyst predictions.
@@ -86,17 +93,33 @@ Python scripts provide additional tools for performance analysis:
 ## 📌 Requirements
 
 ### MATLAB
+
 - Version: R2023a or later
 - Toolboxes: Statistics and Machine Learning Toolbox
 
 ### Python (Optional)
-- Python ≥ 3.8
-- Required packages: `pandas`, `matplotlib`, `seaborn`, `scikit-learn`, `numpy`
+
+- Python ≥ 3.8  
+- Required packages:
+  - `pandas`
+  - `matplotlib`
+  - `seaborn`
+  - `scikit-learn`
+  - `numpy`
 
 Install via pip:
+
 ```bash
 pip install pandas matplotlib seaborn scikit-learn numpy
+```
 
+---
+
+## 📜 Citation
+
+If you use this repository, please cite:
+
+```bibtex
 @article{Han2025UQSPR,
   title     = {Data-driven insight into the universal structure–property relationship of catalysts in lithium–sulfur batteries},
   author    = {Han, Zhiyuan and Tao, Shengyu and Jia, Yeyang and Zhang, Mengtian and Ma, Ruifei and Xiao, Xiao and Zhou, Jiaqi and Gao, Runhua and Cui, Kai and Wang, Tianshuai and Zhang, Xuan and Zhou, Guangmin},
@@ -104,3 +127,19 @@ pip install pandas matplotlib seaborn scikit-learn numpy
   year      = {2025},
   note      = {Accepted, in press}
 }
+```
+
+---
+
+## 📬 Contact
+
+For questions or collaborations, please contact:
+
+- **Shengyu Tao** – [taoshengyu@mail.tsinghua.edu.cn](mailto:taoshengyu@mail.tsinghua.edu.cn)
+- **Prof. Guangmin Zhou** – [guangminzhou@sz.tsinghua.edu.cn](mailto:guangminzhou@sz.tsinghua.edu.cn)
+
+---
+
+## 📄 License
+
+This repository is provided for academic use only. Redistribution or commercial use is not permitted without prior permission.
