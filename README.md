@@ -7,7 +7,6 @@ This repository contains the datasets, machine learning code, and visualization 
 Published in *Journal of the American Chemical Society* (2025).  
 Corresponding authors: [Guangmin Zhou](mailto:guangminzhou@sz.tsinghua.edu.cn), [Xuan Zhang](mailto:xuanzhang@sz.tsinghua.edu.cn)
 
----
 
 ## 🧭 Motivation
 
@@ -15,7 +14,6 @@ The sulfur reduction reaction (SRR) is a critical step in lithium–sulfur batte
 
 **Our dataset spans 20 years (2004–2024)** and is constructed from over **2,900 peer-reviewed studies**. It contains **481 data points**, covering diverse transition metal compounds and their interactions with five representative polysulfide species. This diversity enables robust and generalizable model learning.
 
----
 
 ## 🚀 Key Contributions
 
@@ -24,7 +22,6 @@ The sulfur reduction reaction (SRR) is a critical step in lithium–sulfur batte
 - Trained a collaborative machine learning model using random forests and feature screening.
 - Screened 374,833 materials and experimentally validated CrB₂ as a high-performance catalyst.
 
----
 
 ## 🔧 Code Structure and Usage Guide
 
@@ -54,7 +51,6 @@ This repository provides the complete codebase and data files to reproduce the m
 │   └── Prediction_Results.py
 ```
 
----
 
 ### ▶️ How to Use
 
@@ -77,7 +73,6 @@ This repository provides the complete codebase and data files to reproduce the m
 4. **Screen New Materials**  
    Replace the input dataset with new candidate features and repeat the above steps. Predictions will guide high-throughput catalyst selection.
 
----
 
 ## 📊 Visualization and Analysis
 
@@ -88,7 +83,6 @@ Python scripts provide additional tools for performance analysis:
 - `Prediction_Results.py`: Visualizes top-performing catalyst predictions.
 - `Ead_Distributions.py`: Adsorption energy distributions across LiPS species.
 
----
 
 ## 📌 Requirements
 
@@ -113,7 +107,6 @@ Install via pip:
 pip install pandas matplotlib seaborn scikit-learn numpy
 ```
 
----
 
 ## 📜 Citation
 
@@ -129,7 +122,6 @@ If you use this repository, please cite:
 }
 ```
 
----
 
 ## 📬 Contact
 
@@ -137,7 +129,6 @@ For questions or collaborations, please contact:
 
 - [**Shengyu Tao**](mailto:sytao@berkeley.edu) or the corresponding authors.
 
----
 
 ## 📄 License
 
