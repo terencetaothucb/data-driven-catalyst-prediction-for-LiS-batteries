@@ -5,7 +5,7 @@ This repository contains the datasets, machine learning code, and visualization 
 **"Data-driven insight into the universal structure-property relationship of catalysts in lithium-sulfur batteries"**
 
 Published in *Journal of the American Chemical Society* (2025).  
-Corresponding authors: [Guangmin Zhou](mailto:guangminzhou@sz.tsinghua.edu.cn), [Xuan Zhang](mailto:zhangxuan@sz.tsinghua.edu.cn)
+Corresponding authors: [Guangmin Zhou](mailto:guangminzhou@sz.tsinghua.edu.cn), [Xuan Zhang](mailto:xuanzhang@sz.tsinghua.edu.cn)
 
 ---
 
@@ -33,7 +33,7 @@ This repository provides the complete codebase and data files to reproduce the m
 ### 📁 Code Structure Overview
 
 ```text
-├── dataset.xlsx                      # Final dataset with 14 features and adsorption energy
+├── dataset.xlsx                     # Final dataset with 14 features and adsorption energy
 ├── candidates_from_expert.xlsx      # Expert-selected feature candidates
 ├── Training_Testing_Data.xlsx       # Pre-defined train/test split for model training
 │
@@ -120,7 +120,7 @@ pip install pandas matplotlib seaborn scikit-learn numpy
 If you use this repository, please cite:
 
 ```bibtex
-@article{Han2025UQSPR,
+@article{Han2025,
   title     = {Data-driven insight into the universal structure–property relationship of catalysts in lithium–sulfur batteries},
   author    = {Han, Zhiyuan and Tao, Shengyu and Jia, Yeyang and Zhang, Mengtian and Ma, Ruifei and Xiao, Xiao and Zhou, Jiaqi and Gao, Runhua and Cui, Kai and Wang, Tianshuai and Zhang, Xuan and Zhou, Guangmin},
   journal   = {Journal of the American Chemical Society},
@@ -135,11 +135,31 @@ If you use this repository, please cite:
 
 For questions or collaborations, please contact:
 
-- **Shengyu Tao** – [taoshengyu@mail.tsinghua.edu.cn](mailto:taoshengyu@mail.tsinghua.edu.cn)
-- **Prof. Guangmin Zhou** – [guangminzhou@sz.tsinghua.edu.cn](mailto:guangminzhou@sz.tsinghua.edu.cn)
+- [**Shengyu Tao**](mailto:sytao@berkeley.edu) or the corresponding authors.
 
 ---
 
 ## 📄 License
 
-This repository is provided for academic use only. Redistribution or commercial use is not permitted without prior permission.
+MIT License
+
+Copyright (c) 2025
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights  
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell     
+copies of the Software, and to permit persons to whom the Software is         
+furnished to do so, subject to the following conditions:                      
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.                               
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR    
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,      
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE   
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER        
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+SOFTWARE.
+
