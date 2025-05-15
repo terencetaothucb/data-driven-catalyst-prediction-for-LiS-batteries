@@ -5,20 +5,20 @@ This repository contains the datasets, machine learning code, and visualization 
 **"Data-driven insight into the universal structure-property relationship of catalysts in lithium-sulfur batteries"**
 
 Published in *Journal of the American Chemical Society* (2025).  
-Corresponding authors: [Guangmin Zhou](mailto:guangminzhou@sz.tsinghua.edu.cn), [Xuan Zhang](mailto:xuanzhang@sz.tsinghua.edu.cn)
+Corresponding authors: [Guangmin Zhou](mailto:guangminzhou@sz.tsinghua.edu.cn), [Xuan Zhang](mailto:xuanzhang@sz.tsinghua.edu.cn), [Tianshuai Wang](mailto:tianshuai@nwpu.edu.cn)
 
 
 ## 🧭 Motivation
 
 The sulfur reduction reaction (SRR) is a critical step in lithium–sulfur batteries, yet its catalytic mechanisms remain poorly understood. Existing DFT methods are limited by cost and specificity. To address this, we develop a data-driven framework that extracts universal structure–property relationships (UQSPRs) from a large-scale, heterogeneous dataset and enables rapid prediction and discovery of effective catalysts using machine learning.
 
-**Our dataset spans 20 years (2004–2024)** and is constructed from over **2,900 peer-reviewed studies**. It contains **481 data points**, covering diverse transition metal compounds and their interactions with five representative polysulfide species. This diversity enables robust and generalizable model learning.
+**Our dataset spans 20 years (2004–2024)** and is constructed by detecting from over **2,900 peer-reviewed studies**. It contains **481 data points**, covering diverse transition metal compounds and their interactions with five representative polysulfide species. This diversity enables robust and generalizable model learning.
 
 
 ## 🚀 Key Contributions
 
 - Built the first high-quality adsorption energy dataset for SRR catalysts based on literature mining.
-- Proposed a geometric descriptor (dispersion factor) that predicts catalytic activity better than traditional electronic descriptors.
+- Proposed a geometric descriptor (dispersion factor) that predicts catalytic activity, in contrast to traditional electronic state analysis frameworks.
 - Trained a collaborative machine learning model using random forests and feature screening.
 - Screened 374,833 materials and experimentally validated CrB₂ as a high-performance catalyst.
 
